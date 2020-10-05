@@ -4,6 +4,8 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/userDatabase"
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/databaseName') + "?retryWrites=false"
+app.config["MONGO_URI"] = host
 mongo = PyMongo(app)
 
 
