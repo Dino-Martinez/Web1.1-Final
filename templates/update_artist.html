@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+<section>
+    <h1>{{artist.alias}} - AKA {{artist.name}}</h1>
+    <p>New Info:</p>
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <label>Alias:</label>
+        <input type="text" name="alias">
+        <input type="submit"></input>
+    </form>
+</section>
+{%endblock content%}

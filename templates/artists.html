@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+<section>
+    <h1>All Artists:</h1>
+    <ul>
+        {% for artist in artists %}
+        <li><a href="/artists/{{artist._id}}">{{artist.alias}}</a> - AKA {{artist.name}}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST">
+        <h1>Add an Artist:</h1>
+        <label>Full Name:</label>
+        <input type="text" name="name">
+        <br><br>
+        <label>Artist Name/Alias:</label>
+        <input type="text" name="alias">
+        <br><br>
+        <input type="submit" value="Add Artist">
+    </form>
+    <br><br>
+    <a href="remove_artist">Remove an artist</a>
+</section>
+{%endblock content%}

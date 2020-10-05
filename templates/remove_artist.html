@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block content%}
+<section>
+    <h1>Pick an artist to delete</h1>
+    <ul>
+        {% for artist in artists %}
+        <li><a href="/remove_artist/{{artist._id}}">Delete {{artist.alias}}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{%endblock content%}

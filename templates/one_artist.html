@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block content%}
+<section>
+    <h1>{{artist.alias}}'s albums:</h1>
+    <ul>
+        {% for album in albums %}
+        <li>
+            {{album.title}} was released on {{album.release_date}} and has {{album.genre}} music!
+            <a href="../remove_album/{{album._id}}">X Remove album</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Add an Album:</h1>
+    <form method="POST">
+        <label>Title:</label>
+        <input type="text" name="title"/>
+        <br><br>
+        <label>Release Date:</label>
+        <input type="date" name="release-date"/>
+        <br><br>
+        <label>Genre:</label>
+        <input type="text" name="genre"/>
+        <br><br>
+        <input type="submit" value="Add album"/>
+    </form>
+
+    <br><br>
+    <a href="/update_artist/{{artist._id}}">Update Artist Info</a>
+</section>
+{%endblock content%}
